@@ -11,9 +11,9 @@ from urllib.parse import urlparse
 
 import mlflow
 
-os.environ['MLFLOW_TRACKING_URI']="https://github.com/pbton/machinelearningpipeline.git"
+os.environ['MLFLOW_TRACKING_URI']="https://dagshub.com/pbton/machinelearningpipeline.mlflow"
 os.environ['MLFLOW_TRACKING_USERNAME']="pbton"
-os.environ['MLFLOW_TRACKING_PASSWORD']="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"
+os.environ['MLFLOW_TRACKING_PASSWORD']="d25b833fe6aaa59b220a6798684e928c3a802a6f"
 
 def hyperparameter_tuning(X_train,y_train,param_grid):
     rf=RandomForestClassifier()
@@ -29,7 +29,7 @@ def train(data_path,model_path,random_state,n_estimators,max_depth):
     X=data.drop(columns=["Outcome"])
     y=data['Outcome']
 
-    mlflow.set_tracking_uri("https://github.com/pbton/machinelearningpipeline.git")
+    mlflow.set_tracking_uri("https://dagshub.com/pbton/machinelearningpipeline.mlflow")
 
     ## start the MLFLOW run
     with mlflow.start_run():
